@@ -1,16 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { getBlogs } from '../../../services/blogs';
+import React from 'react';
+import { useBlogs } from '../../../hooks/useBlogs';
 import BlogCard from '../../BlogCard/BlogCard';
 
 export default function Main() {
-  const [blogs, setBlogs] = useState([]);
-  useEffect(() => {
-    async function fetchData() {
-      const data = await getBlogs();
-      setBlogs(data);
-    }
-    fetchData();
-  }, []);
+  const blogs = useBlogs();
   return (
     <main>
       {blogs.map((blog) => (
