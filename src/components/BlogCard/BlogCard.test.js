@@ -5,6 +5,7 @@ test('should render the blog card with title, subtitle, author and text', () => 
   const container = render(
     <BlogCard
       title="Test title"
+      authors={{ name: 'Test author' }}
       subtitle="Test subtitle"
       text="lorem ipsum blah blah blah"
       image="https://www.fillmurray.com/300/200"
